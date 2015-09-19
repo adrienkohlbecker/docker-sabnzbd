@@ -14,6 +14,9 @@ RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /tmp/*
 
+RUN useradd --uid 2001 --user-group --create-home sabnzbd
+USER sabnzbd
+
 ADD sabnzbd.ini /config/sabnzbd.ini
 ADD boot.sh /config/boot.sh
 
