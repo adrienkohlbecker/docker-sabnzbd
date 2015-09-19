@@ -15,9 +15,10 @@ RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
     rm -rf /tmp/*
 
 ADD sabnzbd.ini /config/sabnzbd.ini
+ADD boot.sh /config/boot.sh
 
 VOLUME ["/data", "/media"]
 
 EXPOSE 8080 9090
 
-CMD ["/usr/bin/sabnzbdplus","--config-file","/config/sabnzbd.ini","--console"]
+CMD ["/config/boot.sh", "/usr/bin/sabnzbdplus", "--config-file", "/tmp/sabnzbd.ini", "--console"]
