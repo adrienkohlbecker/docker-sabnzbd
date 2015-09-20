@@ -23,7 +23,7 @@ USER sabnzbd
 
 ADD sabnzbd.ini /config/sabnzbd.ini
 ADD boot.sh /config/boot.sh
-ADD nzbToMedia.cfg /opt/nzbToMedia/nzbToMedia.cfg
+ADD autoProcessMedia.cfg /opt/nzbToMedia/autoProcessMedia.cfg
 
 VOLUME ["/data"]
 
