@@ -19,6 +19,10 @@ cat /config/sabnzbd.ini \
   > /tmp/sabnzbd.ini
 
 sed -i "s/SABNZBD_API_KEY/$SABNZBD_API_KEY/" /opt/nzbToMedia/nzbToMedia.cfg
+sed -i "s/SICKRAGE_HOST/$SICKRAGE_HOST/" /opt/nzbToMedia/nzbToMedia.cfg
+sed -i "s/SICKRAGE_PORT/$SICKRAGE_PORT/" /opt/nzbToMedia/nzbToMedia.cfg
 sed -i "s/COUCHPOTATO_API_KEY/$COUCHPOTATO_API_KEY/" /opt/nzbToMedia/nzbToMedia.cfg
+sed -i "s/COUCHPOTATO_HOST/$COUCHPOTATO_HOST/" /opt/nzbToMedia/nzbToMedia.cfg
+sed -i "s/COUCHPOTATO_PORT/$COUCHPOTATO_PORT/" /opt/nzbToMedia/nzbToMedia.cfg
 
 exec ${*:1}
