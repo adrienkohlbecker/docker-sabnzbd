@@ -1,0 +1,53 @@
+{
+  "_public_key": "78eb777a01cac241289e47b5b41ffc14fd7e9a6ad4fc4eea1be560f3a2c60352",
+  "sabnzbd_api_key": {
+    "_description": "API key for sabnzbd access",
+    "_created_at": "2015-09-19",
+    "value": "EJ[1:Hhfx9EyD2s0QcYukEDFZ4DQ0ONdF8b5SCR2uY2wdH3I=:AjWAXptqi2k5FiVm2cUVla9xdfOjV3R7:VltJa3a/gccx79vIrTI6Gsu4xcdsfiRbY0BhIx5feap8P+P0IAbRgMrXA6EF5mxD]"
+  },
+  "mandrill_username": {
+    "_description": "Username for sending emails via Mandrill",
+    "_created_at": "2014-06-04",
+    "value": "EJ[1:Hhfx9EyD2s0QcYukEDFZ4DQ0ONdF8b5SCR2uY2wdH3I=:4fHuuyypwG6d7qPd+QUdT0bIrDiBcRgw:m7fuZsiRL6c60ur8jm+NhmMuyrqZDy1rt3uUk16uvd0KkIH13KXl/VWHFA==]"
+  },
+  "mandrill_password": {
+    "_description": "Password for sending emails via Mandrill",
+    "_created_at": "2014-06-04",
+    "value": "EJ[1:Hhfx9EyD2s0QcYukEDFZ4DQ0ONdF8b5SCR2uY2wdH3I=:Nw0omnOrYXcsqeTu9lKN6lKnWWv/Ln0o:viWA7U5YY7t404sCGw/3SBHcVzdTe2fu2juwFEMd0C2BJOzWc+Y=]"
+  },
+  "email_from": {
+    "_description": "Sender for internal emails",
+    "_created_at": "2015-09-19",
+    "value": "EJ[1:Hhfx9EyD2s0QcYukEDFZ4DQ0ONdF8b5SCR2uY2wdH3I=:OD/6OoNNaoLrZgIhRfYmePB78ag/wDVh:oaolurJGK5I5pNnfAgo4KFbaLVKAFIqkRRca6l/4/1Qy]"
+  },
+  "email_to": {
+    "_description": "Recepients for internal emails",
+    "_created_at": "2015-09-19",
+    "value": "EJ[1:Hhfx9EyD2s0QcYukEDFZ4DQ0ONdF8b5SCR2uY2wdH3I=:7tjXO+iRnL4jTSe+rj7k7A4BM7+2Ob+s:RldqJO5cEAX2NIgGgV+FLh9SIVk4r0F2eKNMavuLn7QGK3HdYHKxk6Fuon5RCAP1965Yv6Sd5GPTi7Qf9ao=]"
+  },
+  "newsgroupdirect_username": {
+    "_description": "Username for Usenet",
+    "_created_at": "2014-12-01",
+    "value": "EJ[1:Hhfx9EyD2s0QcYukEDFZ4DQ0ONdF8b5SCR2uY2wdH3I=:eaCZXh0ExH0WQ1eEhNBLs6LlYS1nEusf:1WN1Q1ZO712rgBnZJ5bxwfCPyZ+yPOz0lV8U]"
+  },
+  "newsgroupdirect_password": {
+    "_description": "Password for usenet",
+    "_created_at": "2014-12-01",
+    "value": "EJ[1:Hhfx9EyD2s0QcYukEDFZ4DQ0ONdF8b5SCR2uY2wdH3I=:0Autyp4hHuv7BVD1wAlOsmVZPEPglc/e:qlAdPtrJsVeWGbztkxYN7yKfIh8FAsBcQ/107S5fagE610UH]"
+  },
+  "nzb_key": {
+    "_description": "API key for NZB access",
+    "_created_at": "2015-09-19",
+    "value": "EJ[1:Hhfx9EyD2s0QcYukEDFZ4DQ0ONdF8b5SCR2uY2wdH3I=:eEoQxnEFg1xY62jpMR0HTRmLET7SjGSF:gWiPhPjHWvqzcpAd8gzldXp/LmJ/zHiIUWg/wlPKyYqLNFfC/UTxXThaB8u0yRLz]"
+  },
+  "oznzb_api_key": {
+    "_description": "Api key for ratings",
+    "_created_at": "2014-07-06",
+    "value": "EJ[1:Hhfx9EyD2s0QcYukEDFZ4DQ0ONdF8b5SCR2uY2wdH3I=:oGgFt7v6CdMjkbX3DxFX2UzJyjypDI5J:Nah6XKivmezFch/c1JJI/LcZjNyv74c8OnEYhnqKiv4fnLcBw/zTMLcEBD3xeP+w]"
+  },
+  "couchpotato_api_key": {
+    "_description": "Api key for couchpotato notifications",
+    "_created_at": "2015-09-19",
+    "value": "EJ[1:Hhfx9EyD2s0QcYukEDFZ4DQ0ONdF8b5SCR2uY2wdH3I=:AHyT3acemv9xT5YQy/cnEWt1uglTGj7l:irb6XElRyxo9qpOE06wtY7w4XIeXeoMZN9tM4SMXDSLFjGSMXyMalucTUtvbFtNX]"
+  }
+}

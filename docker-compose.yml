@@ -1,0 +1,12 @@
+---
+sabnzbd:
+  build: .
+  volumes:
+    - /opt/ejson/keys:/opt/ejson/keys:ro
+    - /mnt/docker/sabnzbd:/data
+    - /mnt/media:/media
+  cap_add:
+    - SYS_ADMIN
+  user: root
+  stdin_open: true
+  tty: true
