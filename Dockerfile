@@ -20,8 +20,8 @@ USER sabnzbd
 ADD sabnzbd.ini /config/sabnzbd.ini
 ADD boot.sh /config/boot.sh
 
-VOLUME ["/data", "/media"]
+VOLUME ["/data"]
 
-EXPOSE 8080 9090
+EXPOSE 8080
 
 CMD ["/config/boot.sh", "/usr/bin/sabnzbdplus", "--config-file", "/tmp/sabnzbd.ini", "--console"]

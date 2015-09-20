@@ -6,7 +6,7 @@ set -o pipefail
 IFS=$'\n\t'
 
 cat /config/sabnzbd.ini \
-  | sed "s|API_KEY|$API_KEY|" \
+  | sed "s|SABNZBD_API_KEY|$SABNZBD_API_KEY|" \
   | sed "s|EMAIL_ACCOUNT|$EMAIL_ACCOUNT|" \
   | sed "s|EMAIL_FROM|$EMAIL_FROM|" \
   | sed "s|EMAIL_SERVER|$EMAIL_SERVER|" \
