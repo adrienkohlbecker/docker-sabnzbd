@@ -18,4 +18,7 @@ cat /config/sabnzbd.ini \
   | sed "s|OZNZB_API_KEY|$OZNZB_API_KEY|" \
   > /tmp/sabnzbd.ini
 
+sed -i "s/SABNZBD_API_KEY/$SABNZBD_API_KEY/" /opt/nzbToMedia/nzbToMedia.cfg
+sed -i "s/COUCHPOTATO_API_KEY/$COUCHPOTATO_API_KEY/" /opt/nzbToMedia/nzbToMedia.cfg
+
 exec ${*:1}
