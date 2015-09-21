@@ -3,3 +3,5 @@ COUCHPOTATO_HOST=couchpotato.kohlby.fr
 COUCHPOTATO_PORT=80
 SICKRAGE_HOST=sickrage.kohlby.fr
 SICKRAGE_PORT=80
+PLEX_HOST=plex.kohlby.fr
+PLEX_PORT=80

@@ -25,6 +25,8 @@ cat /app/sabnzbd/autoProcessMedia.cfg \
   | sed "s/COUCHPOTATO_API_KEY/$COUCHPOTATO_API_KEY/" \
   | sed "s/COUCHPOTATO_HOST/$COUCHPOTATO_HOST/" \
   | sed "s/COUCHPOTATO_PORT/$COUCHPOTATO_PORT/" \
+  | sed "s/PLEX_HOST/$PLEX_HOST/" \
+  | sed "s/PLEX_PORT/$PLEX_PORT/" \
   > /opt/nzbToMedia/autoProcessMedia.cfg
 
 exec ${*:1}
