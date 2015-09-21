@@ -25,7 +25,9 @@ RUN curl http://homebrew.staging.cfn.aws.shr.st/shr/shr-20150920234558-linux.deb
     rm shr.deb
 
 RUN useradd --uid 2001 --user-group --create-home sabnzbd && \
-    chown -R sabnzbd /opt/nzbToMedia
+    chown -R sabnzbd /opt/nzbToMedia &&
+    mkdir /data && \
+    chown -R sabnzbd /data
 USER sabnzbd
 
 ADD . /app/sabnzbd
