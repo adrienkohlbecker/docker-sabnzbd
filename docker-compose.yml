@@ -1,6 +1,7 @@
 ---
 sabnzbd:
   build: .
+  container_name: sabnzbd
   volumes:
     - /opt/ejson/keys:/opt/ejson/keys:ro
     - /mnt/docker/sabnzbd:/data
