@@ -5,7 +5,7 @@ set -eu
 set -o pipefail
 IFS=$'\n\t'
 
-cat /config/sabnzbd.ini \
+cat /app/sabnzbd/sabnzbd.ini \
   | sed "s|SABNZBD_API_KEY|$SABNZBD_API_KEY|" \
   | sed "s|EMAIL_FROM|$EMAIL_FROM|" \
   | sed "s|EMAIL_SERVER|$EMAIL_SERVER|" \
@@ -18,11 +18,13 @@ cat /config/sabnzbd.ini \
   | sed "s|OZNZB_API_KEY|$OZNZB_API_KEY|" \
   > /tmp/sabnzbd.ini
 
-sed -i "s/SABNZBD_API_KEY/$SABNZBD_API_KEY/" /opt/nzbToMedia/autoProcessMedia.cfg
-sed -i "s/SICKRAGE_HOST/$SICKRAGE_HOST/" /opt/nzbToMedia/autoProcessMedia.cfg
-sed -i "s/SICKRAGE_PORT/$SICKRAGE_PORT/" /opt/nzbToMedia/autoProcessMedia.cfg
-sed -i "s/COUCHPOTATO_API_KEY/$COUCHPOTATO_API_KEY/" /opt/nzbToMedia/autoProcessMedia.cfg
-sed -i "s/COUCHPOTATO_HOST/$COUCHPOTATO_HOST/" /opt/nzbToMedia/autoProcessMedia.cfg
-sed -i "s/COUCHPOTATO_PORT/$COUCHPOTATO_PORT/" /opt/nzbToMedia/autoProcessMedia.cfg
+cat /app/sabnzbd/autoProcessMedia.cfg \
+  | sed "s/SABNZBD_API_KEY/$SABNZBD_API_KEY/" \
+  | sed "s/SICKRAGE_HOST/$SICKRAGE_HOST/" \
+  | sed "s/SICKRAGE_PORT/$SICKRAGE_PORT/" \
+  | sed "s/COUCHPOTATO_API_KEY/$COUCHPOTATO_API_KEY/" \
+  | sed "s/COUCHPOTATO_HOST/$COUCHPOTATO_HOST/" \
+  | sed "s/COUCHPOTATO_PORT/$COUCHPOTATO_PORT/" \
+  > /opt/nzbToMedia/autoProcessMedia.cfg
 
 exec ${*:1}

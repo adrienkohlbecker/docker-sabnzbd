@@ -4,7 +4,10 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
     apt-get update && \
-    apt-get install -y --force-yes software-properties-common python-software-properties git unrar unzip p7zip curl && \
+    # sabnzbd deps
+    apt-get install -y --force-yes software-properties-common python-software-properties git unrar unzip p7zip  curl && \
+    # shr deps
+    apt-get install -y --force-yes curl git mercurial && \
     add-apt-repository -y ppa:jcfp/ppa && \
     add-apt-repository -y ppa:kirillshkrogalev/ffmpeg-next && \
     apt-get update && \
@@ -25,9 +28,8 @@ RUN useradd --uid 2001 --user-group --create-home sabnzbd && \
     chown -R sabnzbd /opt/nzbToMedia
 USER sabnzbd
 
-ADD sabnzbd.ini /config/sabnzbd.ini
-ADD boot.sh /config/boot.sh
-ADD autoProcessMedia.cfg /opt/nzbToMedia/autoProcessMedia.cfg
+ADD . /app/sabnzbd
+WORKDIR /app/sabnzbd
 
 VOLUME ["/data"]
 
@@ -37,4 +39,4 @@ ENV SHR_EXEC_MODE development
 ENV SHR_EXEC_USER sabnzbd
 
 ENTRYPOINT ["shr", "exec", "--"]
-CMD ["/config/boot.sh", "/usr/bin/sabnzbdplus", "--config-file", "/tmp/sabnzbd.ini", "--console"]
+CMD ["bin/boot", "/usr/bin/sabnzbdplus", "--config-file", "/tmp/sabnzbd.ini", "--console"]
