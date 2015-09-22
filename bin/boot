@@ -29,4 +29,25 @@ cat /app/sabnzbd/autoProcessMedia.cfg \
   | sed "s/PLEX_PORT/$PLEX_PORT/" \
   > /opt/nzbToMedia/autoProcessMedia.cfg
 
+# Clean environment variables not needed at runtime
+# .env
+unset EMAIL_SERVER
+unset COUCHPOTATO_HOST
+unset COUCHPOTATO_PORT
+unset SICKRAGE_HOST
+unset SICKRAGE_PORT
+unset PLEX_HOST
+unset PLEX_PORT
+# .credentials
+unset SABNZBD_API_KEY
+unset MANDRILL_USERNAME
+unset MANDRILL_PASSWORD
+unset EMAIL_FROM
+unset EMAIL_TO
+unset NEWSGROUPDIRECT_USERNAME
+unset NEWSGROUPDIRECT_PASSWORD
+unset NZB_KEY
+unset OZNZB_API_KEY
+unset COUCHPOTATO_API_KEY
+
 exec ${*:1}
