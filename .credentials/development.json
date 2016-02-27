@@ -5,15 +5,15 @@
     "_created_at": "2015-09-19",
     "value": "EJ[1:Hhfx9EyD2s0QcYukEDFZ4DQ0ONdF8b5SCR2uY2wdH3I=:AjWAXptqi2k5FiVm2cUVla9xdfOjV3R7:VltJa3a/gccx79vIrTI6Gsu4xcdsfiRbY0BhIx5feap8P+P0IAbRgMrXA6EF5mxD]"
   },
-  "mandrill_username": {
-    "_description": "Username for sending emails via Mandrill",
-    "_created_at": "2014-06-04",
-    "value": "EJ[1:Hhfx9EyD2s0QcYukEDFZ4DQ0ONdF8b5SCR2uY2wdH3I=:4fHuuyypwG6d7qPd+QUdT0bIrDiBcRgw:m7fuZsiRL6c60ur8jm+NhmMuyrqZDy1rt3uUk16uvd0KkIH13KXl/VWHFA==]"
+  "sendgrid_username": {
+    "_description": "Username for sending emails via Sendgrid",
+    "_created_at": "2016-02-27",
+    "value": "EJ[1:LFLhzQgziGVRCPrCc1b75Loj5HE89W7hCZXVTYT/DgE=:ZuOBinmtSz92mT5bl7sUGE8NANK+t/R3:m6ngjcY1zHRhMV1w3Us+y9aRiJI2gAsB4EK+h/Vb]"
   },
-  "mandrill_password": {
-    "_description": "Password for sending emails via Mandrill",
-    "_created_at": "2014-06-04",
-    "value": "EJ[1:Hhfx9EyD2s0QcYukEDFZ4DQ0ONdF8b5SCR2uY2wdH3I=:Nw0omnOrYXcsqeTu9lKN6lKnWWv/Ln0o:viWA7U5YY7t404sCGw/3SBHcVzdTe2fu2juwFEMd0C2BJOzWc+Y=]"
+  "sendgrid_password": {
+    "_description": "Password for sending emails via Sendgrid",
+    "_created_at": "2016-02-27",
+    "value": "EJ[1:LFLhzQgziGVRCPrCc1b75Loj5HE89W7hCZXVTYT/DgE=:tpwteTNX1juwOVjPl58cXgeP3m6tALao:2x1bWhussjRjrpX3yNWfZ7e2L2mLNqeSQv6gkNTrAx26IdnE]"
   },
   "email_from": {
     "_description": "Sender for internal emails",
