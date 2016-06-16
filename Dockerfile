@@ -6,7 +6,7 @@ RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
     add-apt-repository -y ppa:jcfp/ppa && \
     add-apt-repository -y ppa:kirillshkrogalev/ffmpeg-next && \
     apt-get update && \
-    apt-get install -y --force-yes sabnzbdplus sabnzbdplus-theme-classic sabnzbdplus-theme-mobile sabnzbdplus-theme-plush ffmpeg && \
+    apt-get install -y --force-yes sabnzbdplus ffmpeg && \
     apt-get -y autoremove && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* && \
