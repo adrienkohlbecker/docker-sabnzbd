@@ -27,6 +27,7 @@ cat /app/sabnzbd.ini \
 cat /app/autoProcessMedia.cfg \
   | sed "s/SABNZBD_API_KEY/$SABNZBD_API_KEY/" \
   | sed "s/COUCHPOTATO_API_KEY/$COUCHPOTATO_API_KEY/" \
+  | sed "s/PLEX_TOKEN/$PLEX_TOKEN/" \
   > /opt/nzbToMedia/autoProcessMedia.cfg
 
 exec ${*:1}
