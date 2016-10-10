@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Unofficial bash strict mode http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -eu
+set -o pipefail
+IFS=$'\n\t'
+
+eval "$(ejson-kms export)"
+
+unset AWS_ACCESS_KEY_ID
+unset AWS_SECRET_ACCESS_KEY
+unset AWS_SESSION_TOKEN
+unset AWS_REGION
+
+cat /app/sabnzbd.ini \
+  | sed "s|SABNZBD_API_KEY|$SABNZBD_API_KEY|" \
+  | sed "s|EMAIL_FROM|$EMAIL_FROM|" \
+  | sed "s|EMAIL_TO|$EMAIL_TO|" \
+  | sed "s|EMAIL_ACCOUNT|$SENDGRID_USERNAME|" \
+  | sed "s|EMAIL_PASSWORD|$SENDGRID_PASSWORD|" \
+  | sed "s|NEWSGROUPDIRECT_PASSWORD|$NEWSGROUPDIRECT_PASSWORD|" \
+  | sed "s|NEWSGROUPDIRECT_USERNAME|$NEWSGROUPDIRECT_USERNAME|" \
+  | sed "s|NZB_KEY|$NZB_KEY|" \
+  | sed "s|OZNZB_API_KEY|$OZNZB_API_KEY|" \
+  > /tmp/sabnzbd.ini
+
+cat /app/autoProcessMedia.cfg \
+  | sed "s/SABNZBD_API_KEY/$SABNZBD_API_KEY/" \
+  | sed "s/COUCHPOTATO_API_KEY/$COUCHPOTATO_API_KEY/" \
+  > /opt/nzbToMedia/autoProcessMedia.cfg
+
+exec ${*:1}

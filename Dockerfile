@@ -1,12 +1,13 @@
-FROM kohlby/base:latest
+FROM akohlbecker/base:latest
 
 RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
+    echo "deb http://archive.ubuntu.com/ubuntu/ xenial multiverse" >> /etc/apt/sources.list && \
+    echo "deb-src http://archive.ubuntu.com/ubuntu/ xenial multiverse" >> /etc/apt/sources.list && \
     apt-get update && \
-    apt-get install -y --force-yes software-properties-common python-software-properties git unrar unzip p7zip par2 python-yenc && \
-    add-apt-repository -y ppa:jcfp/ppa && \
-    add-apt-repository -y ppa:kirillshkrogalev/ffmpeg-next && \
+    apt-get install -y software-properties-common python-software-properties git unrar unzip p7zip par2 python-yenc && \
+    add-apt-repository -y ppa:jcfp/nobetas && \
     apt-get update && \
-    apt-get install -y --force-yes sabnzbdplus ffmpeg && \
+    apt-get install -y sabnzbdplus ffmpeg && \
     apt-get -y autoremove && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* && \
@@ -21,12 +22,11 @@ RUN groupadd --gid 2000 media && \
     chown -R sabnzbd:media /data
 USER sabnzbd
 
-ADD . /app/sabnzbd
-WORKDIR /app/sabnzbd
+ADD app /app
+WORKDIR /app
 
 VOLUME ["/data"]
 
 EXPOSE 8080
 
-ENV SHR_EXEC_USER sabnzbd
-CMD ["bin/boot", "/usr/bin/sabnzbdplus", "--config-file", "/tmp/sabnzbd.ini", "--console"]
+CMD ["/app/boot", "/usr/bin/sabnzbdplus", "--config-file", "/tmp/sabnzbd.ini", "--console"]
