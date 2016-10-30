@@ -16,11 +16,11 @@ RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
 RUN git clone https://github.com/clinton-hall/nzbToMedia.git /opt/nzbToMedia
 
 RUN groupadd --gid 2000 media && \
-    useradd --uid 2001 --gid 2000 --create-home sabnzbd && \
-    chown -R sabnzbd:media /opt/nzbToMedia && \
+    useradd --uid 2000 --gid 2000 --create-home media && \
+    chown -R media:media /opt/nzbToMedia && \
     mkdir /data && \
-    chown -R sabnzbd:media /data
-USER sabnzbd
+    chown -R media:media /data
+USER media
 
 ADD app /app
 WORKDIR /app
