@@ -6,8 +6,9 @@ RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
     apt-get update && \
     apt-get install -y software-properties-common python-software-properties git unrar unzip p7zip par2 python-yenc && \
     add-apt-repository -y ppa:jcfp/nobetas && \
+    add-apt-repository ppa:jcfp/sab-addons && \
     apt-get update && \
-    apt-get install -y sabnzbdplus ffmpeg && \
+    apt-get install -y sabnzbdplus ffmpeg python-sabyenc && \
     apt-get -y autoremove && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* && \
