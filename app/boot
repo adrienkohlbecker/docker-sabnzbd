@@ -5,7 +5,19 @@ set -eu
 set -o pipefail
 IFS=$'\n\t'
 
-eval "$(ejson-kms export)"
+SENDGRID_USERNAME=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.sendgrid_username --with-decryption --query "Parameter.Value" --out text)
+SENDGRID_PASSWORD=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.sendgrid_password --with-decryption --query "Parameter.Value" --out text)
+EMAIL_FROM=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.email_from --with-decryption --query "Parameter.Value" --out text)
+EMAIL_TO=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.email_to --with-decryption --query "Parameter.Value" --out text)
+NEWSGROUPDIRECT_USERNAME=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.newsgroupdirect_username --with-decryption --query "Parameter.Value" --out text)
+NEWSGROUPDIRECT_PASSWORD=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.newsgroupdirect_password --with-decryption --query "Parameter.Value" --out text)
+NZB_KEY=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.nzb_key --with-decryption --query "Parameter.Value" --out text)
+OZNZB_API_KEY=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.oznzb_api_key --with-decryption --query "Parameter.Value" --out text)
+USENETFARM_USERNAME=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.usenetfarm_username --with-decryption --query "Parameter.Value" --out text)
+USENETFARM_PASSWORD=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.usenetfarm_password --with-decryption --query "Parameter.Value" --out text)
+PLEX_TOKEN=$(aws ssm get-parameter --region eu-west-1 --name plex.token --with-decryption --query "Parameter.Value" --out text)
+COUCHPOTATO_API_KEY=$(aws ssm get-parameter --region eu-west-1 --name couchpotato.api_key --with-decryption --query "Parameter.Value" --out text)
+SABNZBD_API_KEY=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.api_key --with-decryption --query "Parameter.Value" --out text)
 
 unset AWS_ACCESS_KEY_ID
 unset AWS_SECRET_ACCESS_KEY
