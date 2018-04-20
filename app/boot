@@ -12,7 +12,6 @@ EMAIL_TO=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.email_to --wi
 NEWSGROUPDIRECT_USERNAME=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.newsgroupdirect_username --with-decryption --query "Parameter.Value" --out text)
 NEWSGROUPDIRECT_PASSWORD=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.newsgroupdirect_password --with-decryption --query "Parameter.Value" --out text)
 NZB_KEY=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.nzb_key --with-decryption --query "Parameter.Value" --out text)
-OZNZB_API_KEY=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.oznzb_api_key --with-decryption --query "Parameter.Value" --out text)
 USENETFARM_USERNAME=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.usenetfarm_username --with-decryption --query "Parameter.Value" --out text)
 USENETFARM_PASSWORD=$(aws ssm get-parameter --region eu-west-1 --name sabnzbd.usenetfarm_password --with-decryption --query "Parameter.Value" --out text)
 PLEX_TOKEN=$(aws ssm get-parameter --region eu-west-1 --name plex.token --with-decryption --query "Parameter.Value" --out text)
@@ -35,7 +34,6 @@ cat /app/sabnzbd.ini \
   | sed "s|USENETFARM_PASSWORD|$USENETFARM_PASSWORD|" \
   | sed "s|USENETFARM_USERNAME|$USENETFARM_USERNAME|" \
   | sed "s|NZB_KEY|$NZB_KEY|" \
-  | sed "s|OZNZB_API_KEY|$OZNZB_API_KEY|" \
   > /tmp/sabnzbd.ini
 
 cat /app/autoProcessMedia.cfg \
