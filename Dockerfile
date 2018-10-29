@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
     apt-get update && \
-    apt-get install -y software-properties-common git unrar unzip p7zip par2 python-yenc && \
+    apt-get install -y software-properties-common git unrar unzip p7zip par2 python-yenc iproute2 && \
     add-apt-repository -y ppa:jcfp/nobetas && \
     add-apt-repository ppa:jcfp/sab-addons && \
     apt-get update && \
