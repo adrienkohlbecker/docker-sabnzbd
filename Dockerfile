@@ -8,7 +8,7 @@ RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
     add-apt-repository -y ppa:jcfp/nobetas && \
     add-apt-repository ppa:jcfp/sab-addons && \
     apt-get update && \
-    apt-get install -y sabnzbdplus ffmpeg python-sabyenc && \
+    apt-get install -y sabnzbdplus ffmpeg python-sabyenc par2-tbb && \
     apt-get -y autoremove && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* && \
