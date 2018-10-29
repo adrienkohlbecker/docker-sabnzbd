@@ -1,4 +1,6 @@
-FROM akohlbecker/base:latest
+FROM ubuntu:18.04
+
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
     echo "deb http://archive.ubuntu.com/ubuntu/ xenial multiverse" >> /etc/apt/sources.list && \
