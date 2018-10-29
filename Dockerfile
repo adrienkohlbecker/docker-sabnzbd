@@ -3,10 +3,8 @@ FROM ubuntu:18.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list && \
-    echo "deb http://archive.ubuntu.com/ubuntu/ xenial multiverse" >> /etc/apt/sources.list && \
-    echo "deb-src http://archive.ubuntu.com/ubuntu/ xenial multiverse" >> /etc/apt/sources.list && \
     apt-get update && \
-    apt-get install -y software-properties-common python-software-properties git unrar unzip p7zip par2 python-yenc && \
+    apt-get install -y software-properties-common git unrar unzip p7zip par2 python-yenc && \
     add-apt-repository -y ppa:jcfp/nobetas && \
     add-apt-repository ppa:jcfp/sab-addons && \
     apt-get update && \
