@@ -12,7 +12,7 @@ ENV LANG en_US.UTF-8
 
 RUN set -x \
  && apt-get update \
- && apt-get install -y software-properties-common \
+ && apt-get install -y software-properties-common python-is-python3 \
  && add-apt-repository universe \
  && add-apt-repository multiverse \
  && add-apt-repository ppa:jcfp/nobetas \
