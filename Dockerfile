@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -18,7 +18,7 @@ RUN set -x \
  && add-apt-repository ppa:jcfp/nobetas \
  && add-apt-repository ppa:jcfp/sab-addons \
  && apt-get update \
- && apt-get install -y sabnzbdplus python-sabyenc par2-tbb python-yenc \
+ && apt-get install -y sabnzbdplus par2-tbb \
  && rm -rf /var/lib/apt/lists/*
 
 RUN set -x \
