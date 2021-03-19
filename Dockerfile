@@ -25,7 +25,8 @@ RUN set -x \
  && apt-get update \
  && apt-get install -y git unrar unzip p7zip ffmpeg \
  && git clone https://github.com/clinton-hall/nzbToMedia.git /opt/nzbToMedia \
- && rm -rf /var/lib/apt/lists/*
+ && rm -rf /var/lib/apt/lists/* \
+ && ln -s /usr/bin/unrar-nonfree /usr/local/bin/unrar
 
 VOLUME ["/data"]
 
