@@ -23,7 +23,7 @@ RUN set -x \
 
 RUN set -x \
  && apt-get update \
- && apt-get install -y git unrar unzip p7zip ffmpeg \
+ && apt-get install -y git unrar unzip p7zip ffmpeg curl \
  && git clone https://github.com/clinton-hall/nzbToMedia.git /opt/nzbToMedia \
  && rm -rf /var/lib/apt/lists/* \
  && ln -s /usr/bin/unrar-nonfree /usr/local/bin/unrar
